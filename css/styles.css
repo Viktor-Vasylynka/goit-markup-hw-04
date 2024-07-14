@@ -205,6 +205,35 @@ background: #404bbf;
 
 }
 
+.feature-block {
+
+}
+
+.feature-block-list {
+    display: flex;
+        gap: 24px;
+        
+        
+}
+
+.feature-block-item {
+    width: 264px;
+        height: 112px;
+        border-radius: 4px;
+            background: #f4f4fd;
+            border: 1px solid #8e8f99;
+                border-radius: 4px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+    width: calc((100% - 24px * 3) / 4);
+}
+
+.feature-block-link {}
+
+.feature-block-icon {}
+
 .feature-tittle {
     
 }
