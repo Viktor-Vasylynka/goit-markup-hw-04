@@ -48,6 +48,12 @@ img {
     clip: rect(0 0 0 0);
     overflow: hidden;
 }
+
+:root {
+    --blue-color: #4d5ae5;
+    --white-color: #f4f4fd;
+    --green-color: #31d0aa;
+}
 /* -------------------------HEADER------------------------- */
 
 .header {
@@ -106,7 +112,7 @@ content: '';
 
 position: absolute;
 left: 0;
-bottom: -4px;
+bottom: -1px;
 border-radius: 2px;
 
 width: 100%;
@@ -160,7 +166,8 @@ background: #404bbf;
     background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero-bg.jpg);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: contain;
+    background-size: cover;
+    /* max-width: 1440px; */
 }
 
 .hero-title {
@@ -190,6 +197,7 @@ background: #404bbf;
         border-radius: 4px;
         border: none;
         min-width: 169px;
+        background-color: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-btn:hover,
@@ -201,36 +209,39 @@ background: #404bbf;
 
 /* -------------------------FEATURE------------------------- */
 
-.feature {
-
-}
+.feature {}
 
 .feature-block {
-
 }
 
 .feature-block-list {
     display: flex;
-        gap: 24px;
-        
-        
+    gap: 24px;
 }
 
 .feature-block-item {
-    width: 264px;
-        height: 112px;
-        border-radius: 4px;
-            background: #f4f4fd;
-            border: 1px solid #8e8f99;
-                border-radius: 4px;
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-    width: calc((100% - 24px * 3) / 4);
+    
 }
 
-.feature-block-link {}
+.feature-block-link {
+    
+    }
+
+
+.feature-box-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 112px;
+    background-color: #f4f4fd;
+    border-radius: 4px;
+    border: 1px solid #8e8f99;
+    margin-bottom: 8px;
+    width: 264px;
+        height: 112px;
+}
+
+.feature-icon {}
 
 .feature-block-icon {}
 
@@ -288,7 +299,7 @@ background: #404bbf;
 
 .team-item {
     background-color: #FFFFFF;
-    
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),0px 1px 1px rgba(46, 47, 66, 0.16),0px 2px 1px rgba(46, 47, 66, 0.08);
     border-radius: 0 0 4px 4px;
     
 }
@@ -323,6 +334,7 @@ padding: 32px 0;
     display: flex;
     gap: 24px;
     padding: 0 16px;
+    justify-content: center;
 }
 
 .team-soc-item {
@@ -338,16 +350,16 @@ padding: 32px 0;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background-color: #404bbf;
-
+    background-color: var(--blue-color);
+    transition:background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-soc-link:hover {
-background-color: #31d0aa;
+background-color: #404bbf;
 }
 
 .team-soc-icon {
-fill: #fff;
+fill: var(--white-color);
 }
 /* -------------------------------------------------- */
 
@@ -378,6 +390,14 @@ gap: 48px 24px;
     width: calc((100% - 2 * 24px) / 3);
 }
 
+.portfolio-item:hover {
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
+}
+/* .portfolio-item>portfolio-thumb-text:hover {
+    transform: translateY(0%);
+} */
 .portfolio-container {
 padding: 32px 16px;
 border: 1px solid #e7e9fc;
@@ -386,10 +406,10 @@ border-top: none;
 
 .thumb {
 position: relative;
-/* overflow: hidden; */
+overflow: hidden;
 }
 
-.portfolio-image {
+.portfolio-thumb-image {
 
 }
 
@@ -402,7 +422,9 @@ font-size: 16px;
     letter-spacing: 0.02em;
     color: #f4f4fd;
     background-color: #4d5ae5;
-    padding: 40px 32px 164px;
+    padding: 40px 32px;
+    transform: translateY(100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-subtitle {
@@ -434,9 +456,12 @@ font-size: 16px;
 }
 .footer-block {
     display: flex;
+    align-items: baseline;
 }
 
-.footer-block-logo {}
+.footer-block-logo {
+    margin-right: 120px;
+}
 
 .footer-logo {
     font-family: "Raleway", sans-serif;
@@ -464,10 +489,11 @@ font-size: 16px;
 }
 
 .footer-block-soc {
-margin-left: 120px;
+
 }
 
 .footer-soc-text {
+    font-weight: 500;
     font-size: 16px;
         line-height: 1.5;
         letter-spacing: 0.02em;
@@ -495,15 +521,16 @@ margin-left: 120px;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background-color: #404bbf;
+    background-color: var(--blue-color);
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
 .footer-soc-link:hover {
-    background-color: #31d0aa;
+    background-color: var(--green-color);
 }
 
 .footer-soc-icon {
-    fill: #fff;
+    fill: var(--white-color);
 }
 
