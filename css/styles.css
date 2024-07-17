@@ -340,8 +340,6 @@ padding: 32px 0;
     background-color: #404bbf;
     }
 
-
-
 .team-soc-icon {
 fill: var(--white-color);
 }
@@ -514,10 +512,9 @@ font-size: 16px;
 
 }
 
- 
 .footer-soc-link:hover,
 .footer-soc-link:focus {
-    background-color: #31d0aa;;
+    background-color: #31d0aa;
 }
 
 .footer-soc-icon {
